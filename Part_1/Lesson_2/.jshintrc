@@ -1,0 +1,21 @@
+{
+    "camelcase": true,
+    "indent": 2,
+    "undef": true,
+    "quotmark": false,
+    "maxlen": 80,
+    "trailing": true,
+    "curly": true,
+    "strict": false,
+    "browser": true,
+    "jquery": true,
+    "esversion": 6,
+    "esnext": false,
+    "moz": true,
+    "boss": true,
+    "node": true,
+    "validthis": true,
+    "globals": {
+        "console": true
+    } 
+}
