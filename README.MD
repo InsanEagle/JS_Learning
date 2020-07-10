@@ -1,1 +1,3 @@
-I am learning JS for myself
+# I am learning JS for myself
+
+First steps
