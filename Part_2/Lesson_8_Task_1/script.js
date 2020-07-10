@@ -31,3 +31,12 @@ appData.expenses[expenseItem] = cost;
 //console.log(appData.expenses[expenseItem]);  |
 
 let answer = alert(money / 30);
+
+// Сколько типов данных существует в JS?
+// 6 (Number, String, Symbol, null, undefined, Object, boolean)
+
+// Как вывести информацию в консоль?
+// console.log()
+
+// Какая функция операторов || и &&?
+// logical "or" and logical "and"
