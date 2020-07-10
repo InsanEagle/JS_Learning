@@ -1,3 +1,4 @@
+'use strict';
 // ----------To string----------
 
 // 1. String()

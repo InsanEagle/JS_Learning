@@ -1,3 +1,4 @@
+'use strict';
 // Operators (except '+', '-', '*', '/')
 
 let a = 10,

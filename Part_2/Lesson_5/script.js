@@ -1,3 +1,4 @@
+'use strict';
 // User Interactions
 
 // 1. console.log() - Console output

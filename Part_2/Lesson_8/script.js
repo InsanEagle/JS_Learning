@@ -1,3 +1,4 @@
+'use strict';
 // if .. else ..
 
 if (true) {     

@@ -16,6 +16,9 @@
     "node": true,
     "validthis": true,
     "globals": {
-        "console": true
-    } 
+        "console": true,
+        "window": true,
+        "alert": true,
+        "prompt": true
+    }
 }
