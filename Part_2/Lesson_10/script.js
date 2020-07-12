@@ -1,143 +1,63 @@
 'use strict';
+// Functions 
 
-let money, time;
-
-function start() {
-    money = +prompt("Ваш бюджет на месяц?", "100500");
-    time = prompt("Введите дату", "YYYY-MM-DD");
-
-    while (isNaN(money) || money == "" || money == null) {
-        money = +prompt("Ваш бюджет на месяц?", "100500");
-    }
+function showMessage (text) {
+    alert(text);
 }
+showMessage ("Hello world!");
 
-start();
-
-let appData = {
-    moneyData: money,
-    timeData: time,
-    expenses: {},
-    optionalExpenses: {},
-    savings: true,
-    income: [],
-};
-
-function chooseExpenses() {
-    for (let i = 0; i < 2; i++) {
-        var expenseItem = prompt("Введите обязательную статью расходов" +
-                "в этом месяце", ""),
-            cost = prompt("Во сколько обойдется?", "");
-        if ((typeof (expenseItem)) === "string" &&
-            (typeof (expenseItem)) != null &&
-            (typeof (cost)) != null && expenseItem != '' && cost != '' &&
-            expenseItem.length < 50) {
-            console.log("Key added");
-            appData.expenses[expenseItem] = cost;
-        } else {
-            i--;
-            console.log("You entered wrong data. Try again");
-        }
-    }
+function localVar () {
+    let a = 10;
 }
+localVar();
+//console.log(a); // Local var can't seen outside the function
 
-chooseExpenses();
-
-// Second cycle type
-// let i = 0;
-// while (i < 2) {
-//     var expenseItem = prompt("Введите обязательную статью расходов" +
-//             "в этом месяце", ""),
-//         cost = prompt("Во сколько обойдется?", "");
-//     if ((typeof (expenseItem)) === "string" && (typeof (expenseItem)) !=
-//         null && (typeof (cost)) != null && expenseItem != '' &&
-//         cost != '' && expenseItem.length < 50) {
-//         console.log("Key added");
-//         appData.expenses[expenseItem] = cost;
-//     } else {
-//         i--;
-//         console.log("You entered wrong data. Try again");
-//     }
-//     i++;
-// }
-
-// Third cycle type
-// let i = 0;
-// do {
-//     var expenseItem = prompt("Введите обязательную статью расходов" +
-//             "в этом месяце", ""),
-//         cost = prompt("Во сколько обойдется?", "");
-//     if ((typeof (expenseItem)) === "string" && (typeof (expenseItem)) !=
-//         null && (typeof (cost)) != null && expenseItem != '' &&
-//         cost != '' && expenseItem.length < 50) {
-//         console.log("Key added");
-//         appData.expenses[expenseItem] = cost;
-//     } else {
-//         i--;
-//         console.log("You entered wrong data. Try again");
-//     }
-//     i++;
-// } while (i < 2);
-
-//let a = expenseItem; - save first key name
-
-//console.log(appData.expenses[expenseItem]);  |
-//console.log(appData.expenses[a]);            |  - several tests 
-//console.log(appData.expenses[expenseItem]);  |
-
-function detectDayBudget() {
-    appData.moneyPerDay = (appData.moneyData / 30).toFixed();
-    alert("Ежедневный бюджет: " + appData.moneyPerDay);
+let b = 10;
+function globalVar() {
+    b = 100;
 }
-detectDayBudget();
+globalVar ();
+console.log(b); // Global var can be used inside the function
 
-function detectLevel() {
-    if (appData.moneyPerDay < 100) {
-        console.log("Минимальный уровень достатка");
-    } else if (appData.moneyPerDay < 2000 && appData.moneyPerDay >= 100) {
-        console.log("Средний уровень достатка");
-    } else if (appData.moneyPerDay >= 2000) {
-        console.log("Высокий уровень достатка");
-    } else {
-        console.log("Ошибка");
-    }
+let c = 10;
+function circuitFunc () {
+    let c = 20;
+    console.log(c);
 }
-detectLevel();
+circuitFunc ();
+console.log(c);
 
-// Сколько типов данных существует в JS?
-// 6 (Number, String, Symbol, null, undefined, Object, boolean)
-
-// Как вывести информацию в консоль?
-// console.log()
-
-// Какая функция операторов || и &&?
-// logical "or" and logical "and"
-
-function checkSavings() {
-    if (appData.savings == true) {
-        let save = +prompt("Какова сумма накоплений", ""),
-            percent = +prompt("Под какой процент", "");
-        appData.monthIncome = save / 100 / 12 * percent;
-        alert("Доход в месяц с вашего депозита: " + appData.monthIncome);
-    }
+function calc (a,b) {
+    return a + b;
 }
+console.log(calc(3,4));
 
-checkSavings();
-
-function chooseOptExpenses() {
-    for (let i = 1; i < 4; i++) {
-        var optExpenseItem = prompt("Не обязательная статья расходов", "");
-        if (typeof (optExpenseItem) != null && optExpenseItem != "" &&
-            typeof (optExpenseItem) === "string" && optExpenseItem.length < 50) {
-            console.log("Key added");
-            appData.optionalExpenses[i] = optExpenseItem;
-        } else {
-            i--;
-            console.log("You entered wrong data. Try again");
-        }
-    }
+function returnFunc () {
+    let s = 200;
+    return s;
 }
+console.log(returnFunc());
 
-chooseOptExpenses();
+// Function declaration - can be used before its declaration
+funcDeclaration();
+function funcDeclaration () {console.log("No error");}
 
-// Что значит () после названия функции?
-// Аргументы функции
+// Function expression - can't be used before its declaration
+// funcExprassion(); // Error 
+let funcExprassion = function () {console.log("No error");};
+
+// Arrow function 
+let funcArrow = (x,y) => x+y;
+console.log(funcArrow(2,10));
+
+// Methods and properties 
+let str = "something";
+console.log(str.length);
+console.log(str.toUpperCase());
+let num = "42.323sd3";
+console.log(Math.round(num));
+console.log(parseInt(num));
+console.log(parseFloat(num));
+
+
+
