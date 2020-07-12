@@ -37,7 +37,16 @@
 // arr = ans.split(',');
 // console.log(arr);
 
-let arr = ["abc", "hello", "bca"],
-    i = arr.join(', ');
+// let arr = ["abc", "hello", "bca"],
+//     i = arr.join(', ');
+// console.log(arr);
+// console.log(i);
+
+let arr = [1, 15, 4],
+    i = arr.sort(compareNum);
+
+function compareNum (a,b) {
+    return a-b;
+}
 console.log(arr);
-console.log(i);
+
