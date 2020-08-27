@@ -1,5 +1,7 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
     'use sctrict';
+
+    // Tabs 
 
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
@@ -21,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    info.addEventListener('click', function(event) {
+    info.addEventListener('click', function (event) {
         let target = event.target;
         if (target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
@@ -33,4 +35,4 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-}); 
+});
